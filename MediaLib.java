@@ -8,6 +8,10 @@ public class MediaLib
   private Book book;
   private Movie movie;
 
+  // Step 5 - 2.5.8
+  // Step 8 - 2.5.8 (Changed to public)
+  public static String owner = "PLTW Steven";
+
   public void addBook(Book b)
   {
     book = b;
@@ -29,5 +33,17 @@ public class MediaLib
   // Step 31
   public void addMovie(Movie m) {
     movie = m;
+  }
+
+
+  // Step 1 - 2.5.8
+  public static String getOwner() {
+    // Step 6 - 2.5.8
+    return owner;
+  }
+
+  // Step 7 - 2.5.8
+  public static void changeOwner(String o) {
+    owner = o;
   }
 }
