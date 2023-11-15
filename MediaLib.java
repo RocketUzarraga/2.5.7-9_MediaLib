@@ -20,6 +20,17 @@ public class MediaLib {
   private static int numMovies = 0;
   private static int numSongs = 0;
 
+  // Step 22 - 2.5.9
+  private String dateUpdated;
+
+  public MediaLib() {
+    dateUpdated = TimeStamp.getDate();
+  }
+
+  public String getUpdateDate() {
+    return "Last Updated: " + dateUpdated;
+  }
+
   // Step 13 - 2.5.8
   public static int getNumEntries() {
     return numEntries;
@@ -30,6 +41,7 @@ public class MediaLib {
       book = b;
       numEntries++;
       numBooks++;
+      dateUpdated = TimeStamp.getDate();
     } else {
       System.out.println("Sorry bozo, only one book allowed.");
     }
@@ -53,6 +65,7 @@ public class MediaLib {
       movie = m;
       numEntries++;
       numMovies++;
+      dateUpdated = TimeStamp.getDate();
     } else {
       System.out.println("Sorry bozo, only one movie allowed.");
     }
@@ -84,6 +97,7 @@ public class MediaLib {
       song = s;
       numEntries++;
       numSongs++;
+      dateUpdated = TimeStamp.getDate();
     } else {
       System.out.println("Sorry bozo, only one song allowed.");
     }

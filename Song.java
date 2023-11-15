@@ -1,10 +1,12 @@
 public class Song {
     private String title;
     private String artist;
+    private int rating;
 
     public Song(String t, String a) {
         title = t;
         artist = a;
+        rating = 0;
     }
 
     public String getArtist() {
@@ -19,8 +21,17 @@ public class Song {
         return title.equals(s.getTitle()) && artist.equals(s.getArtist());
     }
 
+    public void adjustRating(int r) {
+        if (r <= 10 && r > 0)
+            rating = r;
+    }
+
     public String toString() {
-        return "\"" + title + "\", by " + artist;
+        String info = "\"" + title + "\", by " + artist;
+        if (rating != 0) {
+            info += ", rating is " + rating;
+        }
+        return info;
     }
 
     public void setArtist(String a) {
